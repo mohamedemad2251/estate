@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="estate_property_type_action" model="ir.actions.act_window">
+        <field name="view_ids" eval="[(5,0,0),(0,0,{'view_mode':'list','view_id':ref('estate.estate_property_type_list_view')}),(0,0,{'view_mode':'form','view_id':ref('estate.estate_property_type_form_view')})]"/>
+    </record>
+
+    <record id="estate_stat_button_action" model="ir.actions.act_window">
+        <field name="view_id" ref="estate.property_offer_list_view"/>
+        <field name="domain">[['property_type_id.id','=',active_id]]</field>
+    </record>
+
+</odoo>

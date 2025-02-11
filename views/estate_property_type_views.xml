@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+    <data>
+
+        <record id="estate.estate_property_type_form_view" model="ir.ui.view">
+            <field name="name">estate.property.type.form.view</field>
+            <field name="model">estate.property.type</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="header" style="display: flex; justify-content: space-between; align-items: center;">
+                            <span>
+                                <h1>
+                                    <field name="name"></field>
+                                </h1>
+                            </span>
+                            <span class="header-stat-button">
+                                <button type="action" name="estate.estate_stat_button_action" string="Offers">
+                                    <div class="stat-button" style="display: flex; align-items:center;">
+
+                                        <div class="stat-icon">
+                                           <span class="fa fa-money" style="text-align: center; font-size: 24px;"></span>
+                                        </div>
+                                        <div class="stat-text" style="display: flex; flex-direction:column; padding-left: 10px; font-size: 12px;">
+                                            <div class="stat-count" style="color: #702963; font-weight: bold;">
+                                                <span>
+                                                   <field name="offer_count"/>
+                                                </span>
+                                            </div>
+                                            <div class="stat-offers">
+                                                <span>Offers</span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </button>
+                            </span>
+                        </div>
+
+                        <notebook>
+                            <page string="Properties">
+                                <field name="property_ids">
+                                    <list>
+                                        <field name="name"/>
+                                        <field name="expected_price"/>
+                                        <field name="state"/>
+                                    </list>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="estate.estate_property_type_list_view" model="ir.ui.view">
+            <field name="name">estate.property.type.list.view</field>
+            <field name="model">estate.property.type</field>
+            <field name="arch" type="xml">
+                <list>
+                    <field name="name"></field>
+                    <field name="sequence" widget="handle"/>
+                </list>
+            </field>
+        </record>
+
+    </data>
+
+</odoo>
